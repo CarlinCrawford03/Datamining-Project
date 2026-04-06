@@ -15,10 +15,12 @@ Sugar
 Water
 Saturated Fat
 Total Fat (Lipids)
+
 🔍 Objectives
 Understand relationships between nutritional variables
 Identify key features for classifying food items
 Detect misfit or outlier rows within categories
+
 📈 Methods
 1. Correlation Analysis
 
@@ -42,6 +44,7 @@ Calculating category-level averages using a GroupBy node
 Joining averages back to the dataset using a Joiner node
 Computing a misfit score based on deviation from category averages
 Applying a threshold (mean + 2×standard deviation) to detect outliers
+
 📊 Key Findings
 Correlation Insights
 Sugar and carbohydrates show a moderate positive relationship
@@ -61,20 +64,8 @@ Egg products with higher-than-expected fat/calories
 These may represent:
 Specialty or processed foods
 Potential labeling or categorization inconsistencies
-🛠 Tools Used
-KNIME Analytics Platform
-CSV Reader
-Column Filter
-GroupBy
-Joiner
-Math Formula / Column Expressions
-Statistics
-Row Filter
-Sorter
-📁 Workflow Summary
-CSV Reader → Data Cleaning → GroupBy (Category Means)
-→ Joiner → Feature Engineering (Misfit Score)
-→ Statistics → Row Filter (Outliers) → Analysis
+
+
 📌 Conclusion
 
 This project demonstrates how data mining techniques can be used to uncover relationships and identify unusual patterns in nutritional data. By comparing each item to its category average, we were able to detect misfit rows that may indicate meaningful product variations or potential data inconsistencies.
