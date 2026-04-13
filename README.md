@@ -1,77 +1,78 @@
-📊 Data Mining Project – Nutritional Analysis & Outlier Detection
-📌 Overview
+# Data Mining Project – Nutritional Analysis & Outlier Detection
 
-This project analyzes a dataset of food items based on their nutritional content to identify patterns, relationships, and potential misclassified items. Using data mining techniques, we explored correlations, selected key features for classification, and detected outliers within categories.
+## Overview
+This project analyzes a dataset of food items based on nutritional content to identify patterns, relationships, and potential misclassified items. Using data mining techniques, we explored correlations between nutrients, selected important features for classification, and detected outliers within food categories.
 
-📂 Dataset
+## Dataset
+The dataset includes the following nutritional variables for each food item:
 
-The dataset contains the following nutritional variables for each food item:
+- Carbohydrates
+- Fiber
+- Kilocalories
+- Protein
+- Sugar
+- Water
+- Saturated Fat
+- Total Fat (Lipids)
 
-Carbohydrates
-Fiber
-Kilocalories
-Protein
-Sugar
-Water
-Saturated Fat
-Total Fat (Lipids)
+## Objectives
+The main goals of this project were to:
 
-🔍 Objectives
-Understand relationships between nutritional variables
-Identify key features for classifying food items
-Detect misfit or outlier rows within categories
+- Understand relationships between nutritional variables
+- Identify important features for classifying food items
+- Detect misfit or outlier rows within food categories
 
-📈 Methods
-1. Correlation Analysis
+## Methods
 
-We examined relationships between all nutritional variables using correlation metrics. Strong relationships were identified and interpreted to understand how nutrients interact.
+### Correlation Analysis
+We examined relationships between nutritional variables using correlation analysis. This helped identify strong positive and negative relationships and provided insight into how nutrients interact across food categories.
 
-2. Feature Selection
+### Feature Selection
+We selected the following three key variables for classification:
 
-We selected three key variables:
+- Sugar
+- Total Fat
+- Kilocalories
 
-Sugar
-Total Fat
-Kilocalories
+These variables were chosen because they capture sweetness, fat content, and energy density, making them useful for distinguishing between food groups.
 
-These features capture sweetness, fat content, and energy density, making them effective for distinguishing between food categories.
+### Outlier Detection
+To identify unusual or misfit rows, we:
 
-3. Outlier Detection
+1. Calculated category-level averages using a **GroupBy** node
+2. Joined category averages back to the original dataset using a **Joiner** node
+3. Computed a misfit score based on deviation from category averages
+4. Applied a threshold of **mean + 2 × standard deviation** to flag outliers
 
-We identified misfit rows by:
+## Key Findings
 
-Calculating category-level averages using a GroupBy node
-Joining averages back to the dataset using a Joiner node
-Computing a misfit score based on deviation from category averages
-Applying a threshold (mean + 2×standard deviation) to detect outliers
+### Correlation Insights
+- Sugar and carbohydrates showed a moderate positive relationship
+- Total fat and saturated fat were strongly correlated
+- Total fat strongly correlated with kilocalories
+- Water and kilocalories showed a strong negative relationship
 
-📊 Key Findings
-Correlation Insights
-Sugar and carbohydrates show a moderate positive relationship
-Total fat and saturated fat are strongly correlated
-Total fat strongly correlates with kilocalories
-Water and kilocalories have a strong negative relationship
-Feature Insights
+### Feature Insights
+Sugar, total fat, and kilocalories were effective for separating food items based on nutritional density and composition.
 
-Sugar, fat, and calories effectively separate food items based on nutritional density and composition.
+### Outliers Identified
+A total of **331 outlier rows** were identified.
 
-Outliers
-Identified 331 outlier rows
-Examples include:
-Milk products with unusually high sugar
-Whey products with extreme nutrient values
-Egg products with higher-than-expected fat/calories
-These may represent:
-Specialty or processed foods
-Potential labeling or categorization inconsistencies
+Examples included:
+- Milk products with unusually high sugar levels
+- Whey products with extreme nutrient values
+- Egg products with higher-than-expected fat or calorie values
 
+These outliers may represent:
+- Specialty or highly processed foods
+- Potential labeling inconsistencies
+- Category mismatches or unusual product formulations
 
-📌 Conclusion
+## Conclusion
+This project demonstrates how data mining techniques can be used to uncover meaningful nutritional patterns and identify unusual observations in food data. By comparing each item to its category average, we were able to detect misfit rows that may reflect either real product variation or possible data quality issues.
 
-This project demonstrates how data mining techniques can be used to uncover relationships and identify unusual patterns in nutritional data. By comparing each item to its category average, we were able to detect misfit rows that may indicate meaningful product variations or potential data inconsistencies.
-
-👥 Contributors
-Jack Resnick
-Carlin Crawford
-Gustave Mensah
-Mason Cooper
+## Contributors
+- Jack Resnick
+- Carlin Crawford
+- Gustave Mensah
+- Mason Cooper
